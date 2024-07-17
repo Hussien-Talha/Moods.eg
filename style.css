@@ -23,13 +23,13 @@ header {
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    cursor: pointer;
     text-align: center;
 }
 
 .product img {
     max-width: 100%;
     height: auto;
+    cursor: pointer;
 }
 
 .modal {
@@ -71,5 +71,49 @@ header {
     font-size: 24px;
     background: white;
     border-radius: 50%;
-    padding: 5px 10px
+    padding: 5px 10px;
+}
+
+.cart-sidebar {
+    position: fixed;
+    right: -400px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    transition: right 0.3s;
+    z-index: 1000;
+}
+
+.cart-sidebar.open {
+    right: 0;
+}
+
+.cart-header {
+    background: #4a90e2;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.cart-header .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.cart-footer {
+    padding: 1rem;
+    text-align: center;
+}
+
+.cart-item {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

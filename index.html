@@ -15,29 +15,23 @@
     </header>
     <main>
         <section id="product-list">
-            <div class="product" onclick="showProductDetails('Product 1', 'Description of product 1', 'images/t shirt 1.png')">
-                <img src="images/t shirt 1.png" alt="Product 2">
+            <div class="product">
+                <img src="images/t shirt 1.png" alt="Product 1" onclick="showProductDetails('Product 1', 'Description of product 1', 'images/t shirt 1.png')">
                 <h2>Product 1</h2>
                 <p>$20.00</p>
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart" onclick="addToCart('Product 1', 20)">Add to Cart</button>
             </div>
-            <div class="product" onclick="showProductDetails('Product 2', 'Description of product 2', 'images/t shirt 2.png')">
-                <img src="images/t shirt 2.png" alt="Product 2">
+            <div class="product">
+                <img src="images/t shirt 2.png" alt="Product 2" onclick="showProductDetails('Product 2', 'Description of product 2', 'images/t shirt 2.png')">
                 <h2>Product 2</h2>
                 <p>$25.00</p>
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart" onclick="addToCart('Product 2', 25)">Add to Cart</button>
             </div>
-            <div class="product" onclick="showProductDetails('Product 2', 'Description of product 2', 'images/t shirt 3.png')">
-                <img src="images/t shirt 3.png" alt="Product 2">
-                <h2>Product 2</h2>
+            <div class="product">
+                <img src="images/t shirt 3.png" alt="Product 2" onclick="showProductDetails('Product 2', 'Description of product 2', 'images/t shirt 3.png')">
+                <h2>Product 3</h2>
                 <p>$25.00</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product" onclick="showProductDetails('Product 2', 'Description of product 2', 'images/bucket hat.png')">
-                <img src="images/bucket hat.png" alt="Product 2">
-                <h2>Product 2</h2>
-                <p>$25.00</p>
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart" onclick="addToCart('Product 2', 25)">Add to Cart</button>
             </div>
             <!-- Add more products as needed -->
         </section>
@@ -46,9 +40,9 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <h2 id="modal-title"></h2>
-            <img id="modal-image" alt="Product 2">
+            <img id="modal-image" alt="Product Image">
             <p id="modal-description"></p>
-            <button id="add-to-cart-modal">Add to Cart</button>
+            <button id="add-to-cart-modal" onclick="addToCart(title, description, image)">Add to Cart</button>
         </div>
     </div>
     <div id="cart-sidebar" class="cart-sidebar">

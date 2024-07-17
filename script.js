@@ -14,7 +14,7 @@ function closeModal() {
 
 document.getElementById('add-to-cart-modal').onclick = function() {
     const title = document.getElementById('modal-title').innerText;
-    const price = parseInt(document.getElementById('modal-description').innerText.match(/\$(\d+)/)[1]);
+    const price = parseFloat(document.getElementById('modal-description').innerText.match(/\$(\d+(\.\d+)?)/)[0].replace('$', ''));
     addToCart(title, price);
     closeModal();
 };
@@ -39,7 +39,7 @@ function updateCart() {
         cartItem.className = 'cart-item';
         cartItem.innerHTML = `
             <span>${item.title} (x${item.quantity})</span>
-            <span>$${item.price * item.quantity}</span>
+            <span>$${(item.price * item.quantity).toFixed(2)}</span>
         `;
         cartItems.appendChild(cartItem);
     });
