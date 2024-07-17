@@ -15,14 +15,26 @@
     </header>
     <main>
         <section id="product-list">
-            <div class="product" onclick="showProductDetails('Product 1', 'Description of product 1', 'images/product1.jpg')">
-                <img src="images/product1.jpg" alt="Product 1">
+            <div class="product" onclick="showProductDetails('Product 1', 'Description of product 1', 'images/t shirt 1.png')">
+                <img src="images/t shirt 1.png" alt="Product 2">
                 <h2>Product 1</h2>
                 <p>$20.00</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
-            <div class="product" onclick="showProductDetails('Product 2', 'Description of product 2', 'images/product2.jpg')">
-                <img src="images/product2.jpg" alt="Product 2">
+            <div class="product" onclick="showProductDetails('Product 2', 'Description of product 2', 'images/t shirt 2.png')">
+                <img src="images/t shirt 2.png" alt="Product 2">
+                <h2>Product 2</h2>
+                <p>$25.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" onclick="showProductDetails('Product 2', 'Description of product 2', 'images/t shirt 3.png')">
+                <img src="images/t shirt 3.png" alt="Product 2">
+                <h2>Product 2</h2>
+                <p>$25.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product" onclick="showProductDetails('Product 2', 'Description of product 2', 'images/bucket hat.png')">
+                <img src="images/bucket hat.png" alt="Product 2">
                 <h2>Product 2</h2>
                 <p>$25.00</p>
                 <button class="add-to-cart">Add to Cart</button>
@@ -34,9 +46,19 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <h2 id="modal-title"></h2>
-            <img id="modal-image" alt="Product Image">
+            <img id="modal-image" alt="Product 2">
             <p id="modal-description"></p>
             <button id="add-to-cart-modal">Add to Cart</button>
+        </div>
+    </div>
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2>Cart</h2>
+        </div>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            <button onclick="checkout()">Checkout</button>
         </div>
     </div>
     <script src="script.js"></script>
