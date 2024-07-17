@@ -1,4 +1,5 @@
 let cartCount = 0;
+const cart = [];
 
 function showProductDetails(title, description, image) {
     document.getElementById('modal-title').innerText = title;
@@ -12,7 +13,47 @@ function closeModal() {
 }
 
 document.getElementById('add-to-cart-modal').onclick = function() {
-    cartCount++;
-    document.getElementById('cart-button').innerText = `🛒 Cart (${cartCount})`;
+    const title = document.getElementById('modal-title').innerText;
+    const price = parseInt(document.getElementById('modal-description').innerText.match(/\$(\d+)/)[1]);
+    addToCart(title, price);
     closeModal();
 };
+
+function addToCart(title, price) {
+    let item = cart.find(product => product.title === title);
+    if (item) {
+        item.quantity++;
+    } else {
+        cart.push({ title, price, quantity: 1 });
+    }
+    cartCount++;
+    document.getElementById('cart-button').innerText = `🛒 Cart (${cartCount})`;
+    updateCart();
+}
+
+function updateCart() {
+    const cartItems = document.getElementById('cart-items');
+    cartItems.innerHTML = '';
+    cart.forEach(item => {
+        const cartItem = document.createElement('div');
+        cartItem.className = 'cart-item';
+        cartItem.innerHTML = `
+            <span>${item.title} (x${item.quantity})</span>
+            <span>$${item.price * item.quantity}</span>
+        `;
+        cartItems.appendChild(cartItem);
+    });
+}
+
+document.getElementById('cart-button').onclick = function() {
+    document.getElementById('cart-sidebar').classList.add('open');
+};
+
+function closeCart() {
+    document.getElementById('cart-sidebar').classList.remove('open');
+}
+
+function checkout() {
+    alert('Proceed to checkout!');
+    closeCart();
+}
